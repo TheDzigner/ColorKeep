@@ -52,6 +52,7 @@ savedCount()
 
 const enter = 
 document.querySelector('.new_container .enter')
+
 allInputColor[0].addEventListener('keyup',function(){
   previewEnterColor.style.backgroundColor = `${this.value}`
 })
@@ -73,13 +74,29 @@ function addNew()
 {
   
   if (allInputColor[0].value == '') {
-    return document.querySelector('#error').textContent = 'Hex color is required'
+     document.querySelector('#error').textContent = 'Hex color is required'
+    setTimeout(()=>{
+      document.querySelector('#error').textContent = ''
+    },2000)
+    return;
   }else if (allInputColor[0].value.length < 3){
-    return document.querySelector('#error').textContent = 'value to short'
+     document.querySelector('#error').textContent = 'value to short'
+    setTimeout(()=>{
+      document.querySelector('#error').textContent = ''
+    },2000)
+    return;
   }else if (allInputColor[0].value.length > 7){
-    return document.querySelector('#error').textContent = 'value to long'
+    document.querySelector('#error').textContent = 'value to long'
+    setTimeout(() => {
+      document.querySelector('#error').textContent = ''
+    }, 2000)
+    return;
   }else if (!allInputColor[0].value.includes('#')){
-     return document.querySelector('#error').textContent = 'missing the "#" symbol'
+     document.querySelector('#error').textContent = 'missing the "#" symbol'
+     setTimeout(() => {
+       document.querySelector('#error').textContent = ''
+     }, 2000)
+     return;
   }else {
   
   SavedColors(allInputColor[3].value,allInputColor[0].value,allInputColor[1].value,allInputColor[2].value)
@@ -109,6 +126,7 @@ localStorage.setItem('colors',JSON.stringify(colors_array))
   allInputColor[2].value = ''
   allInputColor[3].value = ''
   previewEnterColor.style.backgroundColor = ''
+
 }
 
 function showCardColor()
