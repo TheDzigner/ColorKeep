@@ -103,7 +103,11 @@ colors_array.push({
 localStorage.setItem('colors',JSON.stringify(colors_array))
   container.style.display = 'none'
   showCardColor()
-
+  savedCount()
+  allInputColor[0].value = ''
+  allInputColor[1].value = ''
+  allInputColor[2].value = ''
+  allInputColor[3].value = ''
 }
 
 function showCardColor()
