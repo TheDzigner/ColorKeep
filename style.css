@@ -1,0 +1,376 @@
+*
+{
+  margin :0;
+  padding :0;
+  box-sizing: border-box;
+}
+body 
+{
+  width :min(100%,480px);
+  height :100vh;
+  text-align :center ;
+  transition :all  .2s ease-in-out ;
+  background:#252525 ;
+  font-family: 'Varela Round', sans-serif;
+}
+
+::selection
+{
+  background: #1A1A1A;
+  color :#FFFFFF ;
+}
+
+header 
+{
+  display: flex ;
+  justify-content :space-between;
+  align-items :center ;
+  position :fixed ;
+  top: 0;
+  z-index :10 ;
+  padding :10px ;
+  width :min(100%,480px);
+  height :auto ;
+  background :#252525 ;
+  box-shadow :0 0 1px #FFFFFF ;
+}
+
+
+header div 
+{
+  text-align :left ;
+  padding :5px ;
+}
+
+header div h1 
+{
+  font-size :1.5em ;
+  color :#FFFFFF ;
+  
+}
+
+header div span 
+{
+  font-size :.7em ;
+  font-weight :300 ;
+}
+header button 
+{
+  margin-left :auto ;
+  padding : 5px 10px;
+  font-size :.8em ;
+  font-weight :700 ;
+  border :1px solid #F1F1F1 ;
+  border-radius :9999px ;
+  font-family: 'Varela Round', sans-serif;
+  outline :none ;
+}
+
+.search_wrapper 
+{
+  width :min(100%,480px);
+  height :75px ;
+  text-align :center ;
+  position :fixed ;
+  top: 70px;
+  background : #252525 ;
+  z-index :10 ;
+  padding :10px ;
+}
+
+.search_wrapper input 
+{
+  padding :10px ;
+  outline :none ;
+  border :1px solid #F1F1F1 ;
+  width :90%;
+  border-radius :10px ;
+  font-weight :700 ;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.container 
+{
+ width :min(100%,480px);
+ height:100vh;
+ text-align :left ;
+ margin :40% auto 0 ;
+}
+.container h4
+{
+  font-size :.7em;
+  color: #FFFFFF ;
+}
+
+.container .wrapper
+{
+  width :100%;
+  height :auto;
+  margin :2% auto 0 ;
+  text-align :center ;
+  display :flex ;
+  justify-content :left ;
+  align-items :center ;
+  gap:5px ;
+  padding :10px ;
+  flex-wrap :wrap ;
+}
+
+.wrapper .card_color 
+{
+  width:125px;
+  height :120px;
+  border :1px solid rgba(192,181,187,.3) ;
+  display :flex ;
+  justify-content :center ;
+  align-items :left ;
+  flex-direction :column ;
+  padding :5px ;
+  border-radius :5px ;
+  position :relative ;
+  overflow :hidden ;
+}
+
+.card_color  .delete
+{
+ display: block ;
+ width :20px ;
+ height :20px;
+ outline :none ;
+ position :absolute ;
+ top: -1px;
+ right :-1px;
+ border-radius :9999px ;
+ border :1px solid rgba(192,181,187,.3) ;
+ font-size :1em ;
+ text-align :center ;
+}
+
+
+.card_color p 
+{
+  text-transform :capitalize ;
+}
+.card_color.active 
+{
+  display: none ;
+}
+
+.card_color .color 
+{
+  width :100%;
+  height :80%;
+  background :#FFFFFF ;
+  border-radius :5px ;
+}
+
+.card_color p 
+{
+  font-size :.6em ;
+  color :#FFFFFF ;
+  padding :5px 0 0;
+  text-align :left ;
+}
+
+.addNew__ 
+{
+  position :fixed ;
+  bottom :5%;
+  right:5%;
+}
+.addNew__ button 
+{
+  outline :none ;
+  display :block ;
+  width :45px;
+  height :45px;
+  border-radius :50%;
+  border :1px solid #F1F1F1 ;
+   font-family: 'Varela Round', sans-serif;
+}
+
+.addNew__  button span 
+{
+  font-size: 1.5em ;
+}
+
+.full_view_container 
+{
+  position :fixed ;
+  width :min(80%,480px);
+  height :70vh;
+  border :1px solid rgba(192,181,187,.3) ;
+  bottom :10%;
+  left :10%;
+  background :#252525 ;
+  z-index :20;
+  text-align :center ;
+  padding :15px ;
+  border-radius :5px ;
+  display :none ;
+}
+
+
+
+.full_view_container.showUp 
+{
+  display: block ;
+}
+
+
+.full_view_container h4 
+{
+  font-size: 1em ;
+  text-align :left ;
+  color: #FFFFFF ;
+  padding :10px ;
+  text-transform :capitalize ;
+}
+
+.full_view_container  .close
+{
+  display: block;
+  margin-left: auto;
+  padding :5px 7px;
+  border-radius :9999px;
+  border :1px solid rgba(192, 181, 187, .3);
+  outline :none;
+  background :#252525;
+  color: #FFFFFF;
+  box-shadow :0 0 7px inset rgba(6, 6, 6, .3);
+  
+}
+
+
+.full_view_container  .color 
+{
+  width: 100%;
+  height :50%;
+  margin :0 auto 0 ;
+}
+.full_view_container .inputs_ 
+{
+  width :100%;
+  height :30%;
+  margin :10px auto 0 ;
+}
+
+.inputs_  input 
+{
+  outline :none ;
+  display :inline-block ;
+  padding :10px ;
+  width :80%;
+  margin :5px ;
+  pointer-events: none ;
+ font-family: 'Varela Round', sans-serif;
+ background : #FFFFFF ;
+ border :1px solid rgba(192,181,187,.3) ;
+ 
+}
+.hex_input
+{
+  text-align: center ;
+}
+
+.hex_input button 
+{
+  outline: none ;
+  display :inline-block ;
+  width :35px;
+  height :35px;
+  background :#252525 ;
+  box-shadow :0 0 7px inset rgba(3,3,3,.3);
+  border :1px solid rgba(192,181,187,.3) ;
+  color :#FFFFFF ;
+  
+}
+.new_container 
+{
+  position :fixed;
+  z-index :30;
+  width :min(80%,480px);
+  height :auto ;
+  background :#252525 ;
+  border :1px solid rgba(192,181,187,.3) ;
+  bottom :10%;
+  left :10%;
+  text-align :center ;
+  padding :10px ;
+  display :none ;
+}
+
+.new_container .cancel 
+{
+  display: block ;
+  margin-left: auto ;
+  padding :5px 7px;
+  border-radius :9999px;
+  border :1px solid rgba(192,181,187,.3) ;
+  outline :none ;
+  background :#252525 ;
+  color: #FFFFFF ;
+  box-shadow :0 0 7px inset rgba(6,6,6,.3);
+}
+.new_container .enter 
+{
+  display: block ;
+  padding :10px 20px ;
+  margin-left: auto ;
+  outline :none ;
+  background :#034d4f;
+  border :1px solid rgba(192,181,187,.3) ;
+  color :#FFFFFF ;
+  border-radius :5px ;
+  font-size :1em ;
+}
+.new_container .previewColor 
+{
+  width :40%;
+  height :105px;
+  border :1px solid rgba(192,181,187,.3) ;
+  margin :2% auto 0 ;
+}
+
+.enterColor 
+{
+  width :90%;
+  height :40%;
+  margin : 1%  auto 0 ;
+  text-align :center ;
+}
+
+.enterColor label 
+{
+  display:flex ;
+  justify-content :center ;
+  align-items :left;
+  flex-direction :column ;
+  width :100%;
+  margin :3px auto 0;
+  padding :4px ;
+}
+
+
+
+.enterColor label p, span
+{
+  padding :5px ;
+  color :#FFFFFF ;
+  font-size :.8em;
+  text-align :left ;
+}
+.enterColor label span 
+{
+  font-size:.6em;
+  color: red;
+}
+.enterColor label input 
+{
+  outline: none ;
+  padding :10px ;
+  border-radius :5px ;
+  font-family: 'Varela Round', sans-serif;
+  background : #FFFFFF ;
+  border :1px solid rgba(192,181,187,.3) ;
+}
