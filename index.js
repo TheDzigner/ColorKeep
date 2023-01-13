@@ -108,6 +108,7 @@ localStorage.setItem('colors',JSON.stringify(colors_array))
   allInputColor[1].value = ''
   allInputColor[2].value = ''
   allInputColor[3].value = ''
+  previewEnterColor.style.backgroundColor = ''
 }
 
 function showCardColor()
