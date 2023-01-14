@@ -1,5 +1,12 @@
 const colors_array = JSON.parse(localStorage.getItem('colors') || '[]')
   
+ const open_menu = 
+ document.querySelector('#open_menu')
+  
+  const hexInputConvert =
+  document.querySelectorAll('.input_wr input')
+  
+  
   const wrapper = 
   document.querySelector('.wrapper')
   
@@ -49,6 +56,22 @@ document.querySelector('.new_container .cancel')
 
 
 savedCount()
+
+
+
+open_menu.addEventListener('click',()=>{
+  document.querySelector('.menu_container').classList.toggle('open');
+  
+  if (document.querySelector('.menu_container').classList.contains('open')) {
+    open_menu.innerHTML = 'close'
+  } else {
+    open_menu.innerHTML = 'menu'
+  }
+})
+
+
+
+
 
 const enter = 
 document.querySelector('.new_container .enter')
@@ -310,4 +333,72 @@ copyColor[2].addEventListener('click', () => {
   
 })
 
+const Convertbtn = 
+document.querySelector('.convert')
+
+const copy = 
+document.querySelector('.copy')
+
+function hexToRgb(hex) {
+    // Remove the "#" symbol if present
+    hex = hexInputConvert[0].value
+    hex = hex.replace("#", "");
+    // Split the hex color code into its red, green, and blue components
+    let r = parseInt(hex.substring(0, 2), 16);
+    let g = parseInt(hex.substring(2, 4), 16);
+    let b = parseInt(hex.substring(4, 6), 16);
+
+    if (hexInputConvert[0].value == '' || hexInputConvert[0].value.length > 7) {
+      return
+    } else {
+     return hexInputConvert[1].value = `rgb(${r}, ${g}, ${b})`;
+    }
+
+
+    // Return the RGB color value
+
+
+}
+
+Convertbtn.onclick = hexToRgb
+
+
+
+
+
+
+
+copy.addEventListener('click', () => {
+  if (navigator.clipboard) {
+    hexInputConvert[1].select()
+ navigator.clipboard.writeText(hexInputConvert[1].value)
+ .then(()=>{
+   copy.innerHTML = 'check'
+   setTimeout(()=>{
+   copy.innerHTML = 'content_copy'
+   },1000)
+ })
+.catch(err =>{
+  alert('Failed to copy text',err)
+})
+ 
+  }else {
+    hexInputConvert[1].select()
+    document.execCommand('copy')
+    copy.innerHTML = 'check'
+   setTimeout(()=>{
+   copy.innerHTML = 'content_copy'
+   },1000)
+  }
+  
+  
+})
+
+
+const discover = 
+document.querySelector('.discover')
+
+discover.addEventListener('click',()=>{
+  window.location.replace('/discover.html')
+})
 

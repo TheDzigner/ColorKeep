@@ -32,7 +32,6 @@ header
   width :min(100%,480px);
   height :auto ;
   background :#252525 ;
-  box-shadow :0 0 1px #FFFFFF ;
 }
 
 
@@ -66,7 +65,7 @@ header button
   outline :none ;
 }
 
-.search_wrapper 
+  .search_wrapper 
 {
   width :min(100%,480px);
   height :75px ;
@@ -76,6 +75,10 @@ header button
   background : #252525 ;
   z-index :10 ;
   padding :10px ;
+  display :flex ;
+  justify-content :center ;
+  align-items :center ;
+  box-shadow :0 5px 7px rgba(3,3,3,.5);
 }
 
 .search_wrapper input 
@@ -83,10 +86,101 @@ header button
   padding :10px ;
   outline :none ;
   border :1px solid #F1F1F1 ;
-  width :90%;
+  width :80%;
   border-radius :10px ;
   font-weight :700 ;
   font-family: 'Varela Round', sans-serif;
+}
+
+
+.menu_container 
+{
+  position :fixed ;
+  width :0;
+  height :100vh;
+  background-color: #252525;
+  top:0;
+  z-index :30 ;
+  left: 0;
+  transition :width .2s ease-in-out ;
+  transition-timing-function: cubic-bezier(.5,1.75,.75,1.25);
+  border :1px solid rgba(192,181,187,.3) ;
+  overflow :hidden ;
+}
+
+.menu_container.open
+{
+  width: 55%;
+transition-timing-function: cubic-bezier(.5,1.75,.75,1.25);
+ transition :width .2s ease-in-out ;
+ padding :5px ;
+}
+
+
+.menu_container  .hexToRgb_wrapper 
+{
+  margin :10% auto 0 ;
+  width :100%;
+  padding :5px ;
+  text-align :center ;
+  border-bottom:1px solid rgba(192,181,187,.3) ;
+}
+
+.hexToRgb_wrapper h4 
+{
+  color: #FFFFFF ;
+  padding :10px ;
+  
+}
+.hexToRgb_wrapper .input_wr
+{
+  width :100%;
+  text-align :center ;
+}
+.hexToRgb_wrapper  .input_wr input 
+{
+  padding :7px ;
+  outline :none ;
+  margin :5px auto 0 ;
+  font-family: 'Varela Round', sans-serif;
+  background : #FFFFFF ;
+  border :1px solid rgba(192,181,187,.3) ;
+  border-radius :5px ;
+}
+
+
+.hexToRgb_wrapper .btns_wr 
+{
+  width :100%;
+  display :flex ;
+  justify-content :center ;
+  align-items :center ;
+  padding :10px ;
+}
+
+.hexToRgb_wrapper  .btns_wr button 
+{
+  background : #FFFFFF;
+  color: #252525;
+  display :inline-block ;
+  margin :0 5px ;
+  border :1px solid rgba(192,181,187,.3) ;
+  font-weight :700 ;
+  outline :none ;
+}
+
+.hexToRgb_wrapper  .btns_wr .copy 
+{
+  color: #252525 ;
+  width :35px;
+  height :35px;
+  display :block ;
+}
+
+.hexToRgb_wrapper .btns_wr .convert 
+{
+  height: 35px;
+  width :75px;
 }
 
 .container 
@@ -95,6 +189,7 @@ header button
  height:100vh;
  text-align :left ;
  margin :40% auto 0 ;
+ padding-bottom: 80px;
 }
 .container h4
 {
@@ -175,7 +270,7 @@ header button
 .addNew__ 
 {
   position :fixed ;
-  bottom :5%;
+  bottom :15%;
   right:5%;
 }
 .addNew__ button 
@@ -186,12 +281,14 @@ header button
   height :45px;
   border-radius :50%;
   border :1px solid #F1F1F1 ;
-   font-family: 'Varela Round', sans-serif;
+  background :#FFFFFF ;
+ font-family: 'Varela Round', sans-serif;
 }
 
 .addNew__  button span 
 {
-  font-size: 1.5em ;
+  font-size: 1.8em ;
+  color :#252525 ;
 }
 
 .full_view_container 
@@ -373,4 +470,68 @@ header button
   font-family: 'Varela Round', sans-serif;
   background : #FFFFFF ;
   border :1px solid rgba(192,181,187,.3) ;
+}
+
+
+ .bottom_nav 
+{
+  width :min(100%,480px);
+  position :fixed ;
+  bottom :0 ;
+  display :flex ;
+  justify-content :center ;
+  align-items :center ;
+  z-index :10 ;
+  background :#252525 ;
+  padding :10px ;
+  box-shadow :5px 0 7px rgba(3,3,3,.5);
+}
+
+.bottom_nav .btn_wrapper 
+{
+  flex-grow :1 ;
+  text-align :center ;
+  display :flex ;
+  justify-content :center ;
+  align-items :center ;
+  flex-direction :column ;
+  border-radius :9999px ;
+  border :1px solid rgba(192,181,187,.3) ;
+  height :45px;
+  margin :5px ;
+  line-height :.1;
+  padding :5px ;
+}
+
+.btn_wrapper button 
+{
+  display: block ;
+  background :transparent;
+  color :#FFFFFF ;
+  border :transparent ;
+  outline :none ;
+}
+
+.btn_wrapper span 
+{
+  font-size :.7em ;
+  padding :5px ;
+  color :#FFFFFF ;
+}
+
+.btn_wrapper.active 
+{
+  background :#FFFFFF ;
+  color :#252525 ;
+}
+
+.btn_wrapper.active button
+{
+  color: #252525 ;
+}
+
+.btn_wrapper.active span 
+{
+  color: #252525 ;
+  font-weight :700 ;
 }
